@@ -14,7 +14,7 @@ body {
 .container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 20px; /* Reduced padding for better mobile view */
+  padding: 20px; 
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -23,7 +23,7 @@ body {
 h1 {
   text-align: center;
   color: #222;
-  font-size: 2rem; /* Adjusted for responsiveness */
+  font-size: 2rem; 
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -31,10 +31,10 @@ h1 {
 .search-bar {
   display: block;
   margin: 0 auto 20px;
-  padding: 10px 15px; /* Slightly smaller padding for mobile */
+  padding: 10px 15px; 
   width: 100%;
-  max-width: 400px; /* Adjusted width for smaller screens */
-  font-size: 14px; /* Reduced font size for mobile */
+  max-width: 400px; 
+  font-size: 14px; 
   border-radius: 30px;
   border: 1px solid #ccc;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -45,67 +45,64 @@ h1 {
   border-color: #007bff;
 }
 
-/* Default grid layout for large screens (laptops) */
 .user-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on laptops */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
 }
 
-/* Responsive grid layout for medium screens (tablets) */
 @media (max-width: 1200px) {
   .user-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row on medium screens */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
-/* Responsive grid layout for smaller screens (mobile) */
 @media (max-width: 768px) {
   .user-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
-    gap: 15px; /* Slightly smaller gaps for smaller screens */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
   }
 
   .container {
-    padding: 20px; /* Adjust container padding for smaller screens */
+    padding: 20px; 
   }
 
   h1 {
-    font-size: 1.75rem; /* Smaller font size for smaller screens */
+    font-size: 1.75rem; 
   }
 }
 
 @media (max-width: 480px) {
   .user-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for small mobile screens */
-    gap: 10px; /* Even smaller gap for mobile screens */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
   }
 
   h1 {
-    font-size: 1.5rem; /* Smaller font size for mobile screens */
+    font-size: 1.5rem; 
     margin-bottom: 15px;
   }
 
   .search-bar {
-    max-width: 300px; /* Narrower search bar for mobile */
-    font-size: 13px; /* Smaller font size for mobile */
+    max-width: 300px; 
+    font-size: 13px; 
   }
 
   .user-card {
-    padding: 15px; /* Adjust card padding for mobile screens */
+    padding: 15px; 
   }
 
   .avatar {
-    width: 80px; /* Smaller avatar for mobile */
+    width: 80px; 
     height: 80px;
   }
 
   h3 {
-    font-size: 1.15rem; /* Smaller heading size for mobile */
+    font-size: 1.15rem; 
   }
 
   a {
-    font-size: 14px; /* Smaller font size for profile links */
+    font-size: 14px; 
   }
 }
 
@@ -116,11 +113,11 @@ h1 {
   text-align: center;
   transition: transform 0.3s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  perspective: 1000px; /* Perspective to simulate 3D space for flip effect */
+  perspective: 1000px; 
 }
 
 .user-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
+  transform: translateY(-5px); 
 }
 
 .avatar {
@@ -128,13 +125,13 @@ h1 {
   width: 100px;
   height: 100px;
   margin-bottom: 15px;
-  transition: transform 0.6s ease; /* Smooth transition for the flip effect */
-  transform-style: preserve-3d; /* Enable 3D transformations */
-  backface-visibility: hidden; /* Ensure the back face of the image is hidden when flipped */
+  transition: transform 0.6s ease; 
+  transform-style: preserve-3d; 
+  backface-visibility: hidden; 
 }
 
 .user-card:hover .avatar {
-  transform: rotateY(360deg); /* Coin flip effect (full 360 degrees) */
+  transform: rotateY(360deg); 
 }
 
 h3 {

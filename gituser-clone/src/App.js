@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css"; // Import the updated CSS
-// import logo from "./../public/favicon.ico"; 
+import "./App.css";
 
 const CACHE_KEY = "githubUsers";
 const CACHE_DURATION = 2 * 60 * 1000; // fro testing i give it 2 min dutration
