@@ -1,4 +1,3 @@
-/* Basic reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,27 +13,39 @@ body {
 .container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 20px; 
+  padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 250px;
+  height: 80px;
+  margin-right: 15px;
+}
+
 h1 {
-  text-align: center;
   color: #222;
-  font-size: 2rem; 
-  margin-bottom: 20px;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 .search-bar {
   display: block;
-  margin: 0 auto 20px;
-  padding: 10px 15px; 
+  margin: 20 auto 30px;
+  padding: 12px 20px;
   width: 100%;
-  max-width: 400px; 
-  font-size: 14px; 
+  max-width: 700px;
+  font-size: 16px;
+
   border-radius: 30px;
   border: 1px solid #ccc;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -45,26 +56,28 @@ h1 {
   border-color: #007bff;
 }
 
+/* User grid */
 .user-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr); /*4 screen for big screen */
   gap: 20px;
 }
 
+/* Responsive user grid */
 @media (max-width: 1200px) {
   .user-grid {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr); /* 3 cards fro medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .user-grid {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
+    grid-template-columns: repeat(2, 1fr); /* 2 cards for tablets */
+    gap: 15px;
   }
 
   .container {
-    padding: 20px; 
+    padding: 10px;
   }
 
   h1 {
@@ -74,18 +87,22 @@ h1 {
 
 @media (max-width: 480px) {
   .user-grid {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    grid-template-columns: repeat(2, 1fr); /* 2 card mobile screens */
+    gap: 10px;
+  }
+
+  .logo {
+    width: 40px; 
+    height: 40px;
   }
 
   h1 {
     font-size: 1.5rem; 
-    margin-bottom: 15px;
   }
 
   .search-bar {
     max-width: 300px; 
-    font-size: 13px; 
+    font-size: 14px; 
   }
 
   .user-card {
@@ -93,8 +110,8 @@ h1 {
   }
 
   .avatar {
-    width: 80px; 
-    height: 80px;
+    width: 90px; 
+    height: 90px;
   }
 
   h3 {
@@ -107,37 +124,54 @@ h1 {
 }
 
 .user-card {
-  background-color: white;
-  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  perspective: 1000px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .user-card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.user-card::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 123, 255, 0.15);
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.user-card:hover::before {
+  transform: scale(1.5);
 }
 
 .avatar {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin-bottom: 15px;
-  transition: transform 0.6s ease; 
-  transform-style: preserve-3d; 
-  backface-visibility: hidden; 
-}
-
-.user-card:hover .avatar {
-  transform: rotateY(360deg); 
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 h3 {
   margin-bottom: 10px;
   color: #333;
   font-size: 1.25rem;
+  z-index: 1;
 }
 
 a {
@@ -145,6 +179,7 @@ a {
   color: #007bff;
   font-weight: bold;
   transition: color 0.3s ease;
+  z-index: 1;
 }
 
 a:hover {
